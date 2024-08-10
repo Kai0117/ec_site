@@ -1,30 +1,38 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>EcSite</title>
+    <title>100文字英語日記</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <div class="top-link">
-        <%= link_to "トップ", root_path %>
-      </div>
-      <ul class="nav-links">
-        <li><%= link_to "商品一覧", products_path %></li>
-        <li><%= link_to "新規登録" %></li>
-        <li><%= link_to "ログイン" %></li>
-      </ul>
-    </nav>
+
+  <header>
+  <div class="header-logo">
+  <%= link_to("100文字英語日記","/")%>
+  </div>
+  <ul class="header-menus">
+    <li>
+    <%= link_to("100文字英語日記とは","/about")%>
+    </li>
+
+    <li>
+    <!-- ここにlink_toメソッドを用いて投稿一覧ページへのリンクを作成してください -->
+     <%= link_to("毎日の記録","/posts/index")%>
+  </li>
+
+  <li>
+  <!-- ここに新規投稿ページへのリンクを追加してください -->
+  <%= link_to("日記を書く", "/posts/new") %>
+</li>
+ 
+  </ul>
+</header>
+    <!-- 各ビューファイルは以下のyieldに代入され、application.html.erbの一部となる -->
     <%= yield %>
   </body>
 </html>
